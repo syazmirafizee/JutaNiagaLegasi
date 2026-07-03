@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Juta Niaga Legasi</title>
+    <link rel="stylesheet" href="jnl-main-style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index-jnl-main.html" class="navbar-logo">
+                <img src="jutaniaga-legasi.jpeg" alt="Juta Niaga Legasi Logo">
+            </a>
+            
+            <nav style="display: flex; align-items: center; flex-wrap: wrap; justify-content: center;">
+                <ul class="nav-links">
+                    <li><a href="index-jnl-main.html" data-en="Home" data-ms="Utama">Home</a></li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn" data-en="Group of Companies ▾" data-ms="Kumpulan Syarikat ▾">Group of Companies ▾</a>
+                        <div class="dropdown-content">
+                            <a href="index-jnr.html">JNR Capital (Sales)</a>
+                            <a href="index-jp.html">Juta Properties</a>
+                            <a href="#">Intelektis Digital</a>
+                        </div>
+                    </li>
+
+                    <li><a href="careers-jnl.html" data-en="Careers" data-ms="Kerjaya">Careers</a></li>
+                    <li><a href="contact-jnl.html" data-en="Contact Us" data-ms="Hubungi Kami" style="color: var(--legasi-gold);">Contact Us</a></li>
+                </ul>
+                <button id="lang-toggle">BM</button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="contact-hero">
+        <div class="contact-hero-left">
+            <h1 data-en="Contact Us" data-ms="Hubungi Kami">Contact Us</h1>
+        </div>
+        <div class="contact-hero-right">
+            <div class="ch-img"></div>
+            <div class="ch-gray"></div>
+            <div class="ch-gold"></div>
+            <div class="ch-blue"></div>
+        </div>
+    </section>
+
+    <section class="contact-grid">
+        
+        <div class="contact-info-col">
+            <div class="info-block">
+                <span class="info-num">01</span>
+                <h3 data-en="Address" data-ms="Alamat">Address</h3>
+                <p>
+                    No 54, Jalan Jati Permai,<br>
+                    Taman Jati Permai,<br>
+                    32000 Sitiawan, Perak,<br>
+                    Malaysia.
+                </p>
+            </div>
+
+            <div class="info-block">
+                <span class="info-num">02</span>
+                <h3 data-en="Contact info" data-ms="Maklumat Perhubungan">Contact info</h3>
+                <p>
+                    Tel: 011-2640 8803<br>
+                    E-mel: azmilsani@gmail.com
+                </p>
+            </div>
+        </div>
+
+        <div class="contact-form-col">
+            <h3 class="form-title" data-en="Inquiry Form" data-ms="Borang Pertanyaan">Inquiry Form</h3>
+            <form class="inquiry-form" action="#" method="POST">
+                <input type="text" name="name" placeholder="Your Name (required)" data-en="Your Name (required)" data-ms="Nama Anda (diperlukan)" required>
+                <input type="email" name="email" placeholder="Your Email (required)" data-en="Your Email (required)" data-ms="E-mel Anda (diperlukan)" required>
+                <input type="text" name="subject" placeholder="Subject" data-en="Subject" data-ms="Subjek">
+                <textarea name="message" placeholder="Your Message" data-en="Your Message" data-ms="Mesej Anda" rows="4" required></textarea>
+                <button type="submit" class="btn-send" data-en="Send" data-ms="Hantar">Send</button>
+            </form>
+        </div>
+
+    </section>
+
+    <footer class="footer-modern">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h5 data-en="OUR ADDRESS" data-ms="ALAMAT KAMI">OUR ADDRESS</h5>
+                <h3 data-en="JUTA NIAGA LEGASI" data-ms="JUTA NIAGA LEGASI">JUTA NIAGA LEGASI</h3>
+                <p>No 54, Jalan Jati Permai,<br>Taman Jati Permai,<br>32000 Sitiawan,<br>Perak, Malaysia.</p>
+            </div>
+            <div class="footer-col">
+                <h5 data-en="FOLLOW US" data-ms="IKUTI KAMI">FOLLOW US</h5>
+                <p>Tel: 011-2640 8803<br>E-mel: azmilsani@gmail.com</p>
+            </div>
+            <div class="footer-col footer-logo">
+                <img src="jutaniaga-legasi.jpeg" alt="Juta Niaga Legasi Logo">
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const langToggle = document.getElementById('lang-toggle');
+            let currentLang = localStorage.getItem('mainSiteLang') || 'en';
+
+            const updateLanguage = (lang) => {
+                if(langToggle) langToggle.innerText = lang === 'en' ? 'BM' : 'EN';
+                document.querySelectorAll('[data-en][data-ms]').forEach(elem => {
+                    if (elem.hasAttribute('placeholder')) {
+                         elem.placeholder = elem.getAttribute(`data-${lang}`);
+                    } else {
+                         elem.innerHTML = elem.getAttribute(`data-${lang}`);
+                    }
+                });
+            };
+
+            updateLanguage(currentLang);
+
+            if(langToggle) {
+                langToggle.addEventListener('click', () => {
+                    currentLang = currentLang === 'en' ? 'ms' : 'en';
+                    localStorage.setItem('mainSiteLang', currentLang);
+                    updateLanguage(currentLang);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

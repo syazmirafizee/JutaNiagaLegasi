@@ -1,0 +1,494 @@
+/* =========================================
+   JNR CAPITAL - FINANCIAL SUBSIDIARY THEME
+   Theme: Trust Blue & Action Red
+   Vibe: Financial Security & Debt Management
+========================================= */
+
+:root {
+    /* Logo-inspired Palette */
+    --jnr-blue: #1c2b82; /* Deep Trust Blue */
+    --jnr-red: #cc1016; /* Action Red */
+    --jnr-gray: #f5f7fa; 
+    --text-dark: #2d3748;
+    --text-light: #ffffff;
+    --text-muted: #718096;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: var(--text-dark);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-padding { padding: 6rem 0; }
+
+/* NAVBAR */
+.navbar {
+    background-color: var(--text-light);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-bottom: 4px solid var(--jnr-red);
+}
+
+.nav-container { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    flex-wrap: wrap;
+}
+
+.navbar a.navbar-logo {
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 70px;
+}
+
+.navbar a.navbar-logo img {
+    height: 80px; 
+    width: auto;
+    max-width: 250px;
+    object-fit: contain;
+    transform: scale(1.6); 
+    transform-origin: left center;
+    margin-left: 15px;
+}
+
+.nav-links { 
+    list-style: none; 
+    display: flex; 
+    gap: 25px; 
+    align-items: center; 
+}
+
+.nav-links a { 
+    text-decoration: none; 
+    color: var(--text-dark); 
+    font-weight: 700; 
+    transition: color 0.3s; 
+    font-size: 1.05rem;
+}
+
+.nav-links a:hover { color: var(--jnr-red); }
+
+/* DROPDOWN MENU */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--text-light);
+    min-width: 260px;
+    box-shadow: 0px 10px 30px 0px rgba(0,0,0,0.1);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    border-top: 3px solid var(--jnr-blue);
+    border-radius: 0 0 6px 6px;
+}
+
+.dropdown-content a {
+    color: var(--text-dark);
+    padding: 14px 20px;
+    text-decoration: none;
+    display: block;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #edf2f7;
+    transition: all 0.2s;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--jnr-gray);
+    color: var(--jnr-blue);
+    padding-left: 25px; 
+}
+
+.dropdown:hover .dropdown-content { display: block; }
+
+.btn-back-group {
+    background-color: var(--jnr-gray);
+    color: var(--jnr-blue) !important;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-weight: 800 !important;
+    transition: all 0.3s;
+}
+
+.btn-back-group:hover {
+    background-color: var(--jnr-blue);
+    color: var(--text-light) !important;
+}
+
+#lang-toggle {
+    margin-left: 15px;
+    padding: 0.4rem 0.8rem;
+    background: transparent;
+    color: var(--jnr-blue);
+    border: 2px solid var(--jnr-blue);
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+#lang-toggle:hover {
+    background: var(--jnr-blue);
+    color: var(--text-light);
+}
+
+/* 1. INTRO (IN) - HERO & ABOUT */
+.hero {
+    background: linear-gradient(rgba(28, 43, 130, 0.9), rgba(28, 43, 130, 0.7)), url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--text-light);
+}
+
+.hero-content h1 { 
+    font-size: 4rem; 
+    margin-bottom: 1.5rem; 
+    font-weight: 800; 
+    line-height: 1.15;
+}
+
+.hero-content p { 
+    font-size: 1.3rem; 
+    margin-bottom: 3rem; 
+    color: #e2e8f0; 
+    max-width: 800px; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+.btn-primary {
+    background-color: var(--jnr-red);
+    color: var(--text-light);
+    padding: 1.2rem 3rem;
+    text-decoration: none;
+    font-weight: 800;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+    background-color: #a80b11;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(204, 16, 22, 0.3);
+}
+
+.about-jnr {
+    background-color: var(--jnr-gray);
+    text-align: center;
+}
+.about-jnr p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--text-dark);
+}
+
+/* 2. EDUCATE (ED) - NEW SECTION */
+.educate-section {
+    background-color: var(--text-light);
+    text-align: center;
+}
+
+.educate-box {
+    max-width: 900px;
+    margin: auto;
+    background: var(--jnr-gray);
+    padding: 4rem;
+    border-radius: 8px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+    border-left: 6px solid var(--jnr-red);
+}
+
+.educate-box h2 {
+    color: var(--jnr-red);
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.educate-box p {
+    font-size: 1.15rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+/* 3. UNIQUE SELLING POINT (US) - SERVICES */
+.services-section {
+    background-color: var(--jnr-blue);
+    text-align: center;
+    color: var(--text-light);
+}
+
+.services-title-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.services-title {
+    color: var(--text-light);
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.title-underline {
+    height: 4px;
+    width: 80px;
+    background-color: var(--jnr-red); 
+    border-radius: 2px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2.5rem;
+    padding: 0 1rem;
+}
+
+.service-card {
+    background: var(--text-light);
+    padding: 2.5rem 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-img-wrapper {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; 
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border: 4px solid var(--jnr-gray); 
+}
+
+.service-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service-card h3 {
+    color: var(--jnr-blue);
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.service-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* 4. TRUST (TR) - NEW SECTION */
+.trust-section {
+    background-color: var(--text-light);
+    text-align: center;
+}
+
+.trust-section h2 {
+    color: var(--jnr-blue);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.trust-item h3 {
+    font-size: 3.5rem;
+    color: var(--jnr-red);
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+}
+
+.trust-item p {
+    font-weight: 700;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 5. OFFER (OF) - NEW SECTION */
+.offer-section {
+    background: linear-gradient(135deg, var(--jnr-red) 0%, #881619 100%);
+    color: var(--text-light);
+    text-align: center;
+    padding: 5rem 0;
+}
+
+.offer-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.offer-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-offer {
+    background: var(--text-light);
+    color: var(--jnr-red);
+    padding: 1.2rem 3.5rem;
+    text-decoration: none;
+    font-weight: 800;
+    border-radius: 4px;
+    display: inline-block;
+    transition: 0.3s;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.btn-offer:hover {
+    background: var(--jnr-blue);
+    color: var(--text-light);
+    transform: translateY(-3px);
+}
+
+/* 6. ACTION (AC) - CONTACT SECTION */
+.jnr-contact-section {
+    background-color: #2c2854; 
+    color: var(--text-light);
+    padding: 6rem 0;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.contact-info-col h2, .contact-form-col h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--text-light);
+    letter-spacing: 0.5px;
+}
+
+.contact-info-col p {
+    font-size: 1.05rem;
+    margin-bottom: 1.2rem;
+    color: #e2e8f0; 
+    line-height: 1.6;
+}
+
+.jnr-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.jnr-contact-form input,
+.jnr-contact-form textarea {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    color: var(--text-light);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.jnr-contact-form input::placeholder,
+.jnr-contact-form textarea::placeholder { color: #94a3b8; }
+.jnr-contact-form input:focus, .jnr-contact-form textarea:focus { border-color: rgba(255, 255, 255, 0.6); }
+.jnr-contact-form textarea { resize: vertical; }
+
+.btn-submit {
+    background-color: #a71d20; 
+    color: var(--text-light);
+    padding: 1.2rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover { background-color: #881619; }
+
+/* FOOTER */
+.footer {
+    background-color: #1a1738; 
+    color: var(--text-light);
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.footer img { height: 60px; filter: brightness(0) invert(1); margin-bottom: 1rem; }
+.footer p { color: #a0aec0; font-size: 1rem; }
+
+/* RESPONSIVE CSS */
+@media (max-width: 992px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-container { grid-template-columns: 1fr; gap: 3rem; }
+    .educate-box { padding: 2.5rem; }
+}
+
+@media (max-width: 768px) {
+    .navbar a.navbar-logo img { transform: scale(1.3); margin-left: 10px; }
+    .nav-container { flex-direction: column; gap: 1rem; padding-bottom: 10px; }
+    .hero-content h1 { font-size: 2.8rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .offer-content h2 { font-size: 2.2rem; }
+    .trust-item h3 { font-size: 2.8rem; }
+}
